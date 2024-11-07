@@ -1,9 +1,47 @@
-import React from "react";
+import React ,{useState} from "react";
 import { POSTS } from "../../../utils/db/dummy";
 import { FiPlus } from "react-icons/fi";
+import ResModal from "../modals/respnsibilty";
+import AboutModal from "../modals/aboutModal";
+import SkillModal from "../modals/skillsModal";
+import EducationModal from "../modals/educationModal";
+import ProjectModal from "../modals/projectModal";
+import CertificateModal from "../modals/certificateModal";
+import ResearchPaperModal from "../modals/researchModal";
 
 const ProfilePageMain = () => {
   const myPost = POSTS.slice(2,6);
+  
+  //popup box;
+  const [isAbout, setIsAbout] = useState(false);
+  const openAbout=()=>setIsAbout(true);
+  const closeAbout=()=>setIsAbout(false);
+
+  const [isSkills, setIsSkills]=useState(false);
+  const openSkill=()=>setIsSkills(true);
+  const closeSkill=()=>setIsSkills(false);
+
+  const [isResp , setIsResp]=useState(false);
+  const openResp=()=>setIsResp(true);
+  const closeResp=()=>setIsResp(false);
+
+  const [isEdu, setIsEdu]=useState(false);
+  const openEdu=()=>setIsEdu(true);
+  const closeEdu=()=>setIsEdu(false);
+
+  const [isProject , setIsProject] = useState(false);
+  const openProject=()=>setIsProject(true);
+  const closeProject=()=>setIsProject(false);
+
+  const [isCertificates , setIsCertificates]=useState(false);
+  const openCertificates=()=>setIsCertificates(true);
+  const closeCertificates=()=>setIsCertificates(false);
+
+  const [isResearch ,setIsResearch] =useState(false);
+  const openResearch=()=>setIsResearch(true);
+  const closeResearch=()=>setIsResearch(false);
+
+
 
 
   return (
@@ -98,23 +136,18 @@ const ProfilePageMain = () => {
           Craft an engaging story in your bio and make meaningful connections
           with peers and recruiters alike!
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">Add About</button>
-      </div>
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={openAbout}>Add About</button>
+        <AboutModal isOpen={isAbout} onClose={closeAbout} />
 
-      <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
-        <p className="font-medium text-lg text-[#4c4c4c]">About</p>
-        <p className="text-[0.85rem] text-[#828282]">
-          Craft an engaging story in your bio and make meaningful connections
-          with peers and recruiters alike!
-        </p>
-        <button className="text-[#0073E6] text-[0.95rem]">Add About</button>
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Skills</p>
         <p className="text-[0.85rem] text-[#828282]">
           Tell us about your skills
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">Add Skills</button>
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={openSkill}>Add Skills</button>
+        <SkillModal isOpen={isSkills} onClose={closeSkill} />
+
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Education</p>
@@ -122,7 +155,9 @@ const ProfilePageMain = () => {
           Showcase your academic journey and open doors to your dream career
           opportunities!
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">Add Education</button>
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={openEdu}>Add Education</button>
+        <EducationModal isOpen={isEdu} onClose={closeEdu} />
+          
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Responsibilities</p>
@@ -130,9 +165,12 @@ const ProfilePageMain = () => {
           Highlight the responsibilities you've mastered to demonstrate your
           leadership and expertise!
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">
-          Add Responsibility
-        </button>
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={openResp}>
+        Add Responsibility
+      </button>
+
+      {/* Modal component */}
+      <ResModal isOpen={isResp} onClose={closeResp} />
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Certificate</p>
@@ -140,9 +178,11 @@ const ProfilePageMain = () => {
           Flaunt your certifications and show recruiters that you're a step
           ahead in your field!
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={openCertificates} >
           Add Certificate
         </button>
+      <CertificateModal isOpen={isCertificates} onClose={closeCertificates} />
+
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Projects</p>
@@ -150,26 +190,30 @@ const ProfilePageMain = () => {
           Unveil your projects to the world and pave your path to professional
           greatness!
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">Add Project</button>
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={openProject}>Add Project</button>
+      <ProjectModal isOpen={isProject} onClose={closeProject} />
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
-        <p className="font-medium text-lg text-[#4c4c4c]">Achievements</p>
+        <p className="font-medium text-lg text-[#4c4c4c]">Research Paper</p>
         <p className="text-[0.85rem] text-[#828282]">
           Broadcast your triumphs and make a remarkable impression on industry
           leaders!
         </p>
-        <button className="text-[#0073E6] text-[0.95rem]">
-          Add Achievement
+        <button className="text-[#0073E6] text-[0.95rem]" onClick={(openResearch)}>
+          Add Research Paper
         </button>
+      <ResearchPaperModal isOpen={isResearch} onClose={closeResearch} />
+
+
       </div>
-      <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
+      {/* <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Hobbies</p>
         <p className="text-[0.85rem] text-[#828282]">
           Unearth your hidden passions and connect with like-minded
           professionals and potential employers!
         </p>
         <button className="text-[#0073E6] text-[0.95rem]">Add Hobby</button>
-      </div>
+      </div> */}
     </div>
   );
 };
