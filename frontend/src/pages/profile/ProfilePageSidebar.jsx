@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { Link } from "react-router-dom";
 import { IoMdShare } from "react-icons/io";
 import { MdOutlineEdit } from "react-icons/md";
@@ -5,8 +6,12 @@ import { FiPlus } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { USER } from "../../../utils/db/dummy";
 import RightPanelSkeleton from "../../components/skeletons/RightPanelSkeleton";
+import IntroModal from '../modals/introModal';
 
 const ProfilePageSidebar = () => {
+  const [isIntro, setIsIntro] = useState(false);
+  const openIntro=()=>setIsIntro(true);
+  const closeIntro=()=>setIsIntro(false);
 
   const authUser = USER[6];
   const suggestedUsers = USER.slice(2, 6);
@@ -47,10 +52,11 @@ const ProfilePageSidebar = () => {
           </p>
         </div>
         <div className="mt-3 flex gap-3">
-          <button className="px-3 py-1 pl-1 border border-[#0073E6] text-[#fff] bg-[#0073E6] font-semibold rounded-full flex">
+          <button className="px-3 py-1 pl-1 border border-[#0073E6] text-[#fff] bg-[#0073E6] font-semibold rounded-full flex" onClick={openIntro}>
             <MdOutlineEdit className="size-6 rounded-full p-1 text-[#fff] cursor-pointer " />
             Edit Profile
           </button>
+          <IntroModal isOpen={isIntro} onClose={closeIntro} />
           <button className="px-3 py-1 border border-[#0073E6] text-[#0073E6] font-semibold rounded-full">
             Mentor Profile
           </button>
