@@ -5,8 +5,8 @@ const ProjectModal = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-[800px] relative overflow-y-auto max-h-[90vh]">
-                <div className="flex justify-between items-center mb-4">
+            <div className="bg-white rounded-lg p-6 w-full max-w-[900px] relative overflow-y-auto max-h-[90vh]">
+                <div className="flex justify-between items-center mb-2">
                     <h2 className="text-xl font-semibold">Add Project</h2>
                     <button
                         onClick={onClose}
@@ -15,6 +15,7 @@ const ProjectModal = ({ isOpen, onClose }) => {
                         &times;
                     </button>
                 </div>
+                <hr className="mb-4" />
 
                 {/* Form */}
                 <div className="space-y-4">

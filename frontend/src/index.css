@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global styles to minimize the scrollbar width */
+::-webkit-scrollbar {
+    width: 2px; /* Minimized scrollbar width */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4); /* Color of the draggable part */
+    border-radius: 10px; /* Optional: rounded corners for the thumb */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Track color */
+  }
+  

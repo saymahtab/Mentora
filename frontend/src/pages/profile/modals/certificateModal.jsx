@@ -4,9 +4,9 @@ const CertificateModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white rounded-lg p-6 w-full sm:w-[500px] lg:w-[600px] relative overflow-y-auto max-h-[80vh]">
-                <div className="flex justify-between items-center mb-4">
+        <div className="fixed inset-0 flex items-center justify-center  bg-black bg-opacity-50 z-50">
+            <div className="bg-white rounded-lg p-6 w-full sm:w-[500px] lg:w-[900px] relative overflow-y-auto max-h-[80vh]">
+                <div className="flex justify-between items-center mb-2">
                     <h2 className="text-lg font-semibold">Add Certificates</h2>
                     <button
                         onClick={onClose}
@@ -15,6 +15,7 @@ const CertificateModal = ({ isOpen, onClose }) => {
                         &times;
                     </button>
                 </div>
+                <hr className="mb-4" />
                 
                 {/* Form */}
                 <div className="space-y-4">

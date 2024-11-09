@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { IoMdShare } from "react-icons/io";
 import { MdOutlineEdit } from "react-icons/md";
@@ -6,12 +6,12 @@ import { FiPlus } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { USER } from "../../../utils/db/dummy";
 import RightPanelSkeleton from "../../components/skeletons/RightPanelSkeleton";
-import IntroModal from '../modals/introModal';
+import IntroModal from './modals/introModal';
 
 const ProfilePageSidebar = () => {
   const [isIntro, setIsIntro] = useState(false);
-  const openIntro=()=>setIsIntro(true);
-  const closeIntro=()=>setIsIntro(false);
+  const openIntro = () => setIsIntro(true);
+  const closeIntro = () => setIsIntro(false);
 
   const authUser = USER[6];
   const suggestedUsers = USER.slice(2, 6);
@@ -80,9 +80,8 @@ const ProfilePageSidebar = () => {
             suggestedUsers.map((user, index) => (
               <div
                 key={user._id}
-                className={`flex flex-col items-start justify-between gap-4 pb-5 ${
-                  index !== suggestedUsers.length - 1 ? "border-b" : ""
-                }`}
+                className={`flex flex-col items-start justify-between gap-4 pb-5 ${index !== suggestedUsers.length - 1 ? "border-b" : ""
+                  }`}
               >
                 <div className="flex gap-3 items-start">
                   <div className="avatar">
@@ -113,7 +112,7 @@ const ProfilePageSidebar = () => {
                         e.preventDefault();
                       }}
                     >
-                      <FiPlus /> 
+                      <FiPlus />
                       Connect
                     </button>
                   </div>

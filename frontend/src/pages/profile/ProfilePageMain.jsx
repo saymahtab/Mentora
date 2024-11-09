@@ -1,45 +1,54 @@
-import React ,{useState} from "react";
+import React, { useState , useEffect } from "react";
 import { POSTS } from "../../../utils/db/dummy";
 import { FiPlus } from "react-icons/fi";
-import ResModal from "../modals/respnsibilty";
-import AboutModal from "../modals/aboutModal";
-import SkillModal from "../modals/skillsModal";
-import EducationModal from "../modals/educationModal";
-import ProjectModal from "../modals/projectModal";
-import CertificateModal from "../modals/certificateModal";
-import ResearchPaperModal from "../modals/researchModal";
+import ResModal from "./modals/respnsibilty";
+import AboutModal from "./modals/aboutModal";
+import SkillModal from "./modals/skillsModal";
+import EducationModal from "./modals/educationModal";
+import ProjectModal from "./modals/projectModal";
+import CertificateModal from "./modals/certificateModal";
+import ResearchPaperModal from "./modals/researchModal";
 
 const ProfilePageMain = () => {
-  const myPost = POSTS.slice(2,6);
-  
+  const [myPost, setMyPost] = useState([]);
+  const [postCount, setPostCount] = useState(0);
+  useEffect(() => {
+    setMyPost(POSTS.slice(0, 2));
+  }, []);
+  const suggestpost = () => {
+    const newPostCount = postCount + 2;
+    setMyPost(POSTS.slice(0, newPostCount));
+    setPostCount(newPostCount);
+  };
+
   //popup box;
   const [isAbout, setIsAbout] = useState(false);
-  const openAbout=()=>setIsAbout(true);
-  const closeAbout=()=>setIsAbout(false);
+  const openAbout = () => setIsAbout(true);
+  const closeAbout = () => setIsAbout(false);
 
-  const [isSkills, setIsSkills]=useState(false);
-  const openSkill=()=>setIsSkills(true);
-  const closeSkill=()=>setIsSkills(false);
+  const [isSkills, setIsSkills] = useState(false);
+  const openSkill = () => setIsSkills(true);
+  const closeSkill = () => setIsSkills(false);
 
-  const [isResp , setIsResp]=useState(false);
-  const openResp=()=>setIsResp(true);
-  const closeResp=()=>setIsResp(false);
+  const [isResp, setIsResp] = useState(false);
+  const openResp = () => setIsResp(true);
+  const closeResp = () => setIsResp(false);
 
-  const [isEdu, setIsEdu]=useState(false);
-  const openEdu=()=>setIsEdu(true);
-  const closeEdu=()=>setIsEdu(false);
+  const [isEdu, setIsEdu] = useState(false);
+  const openEdu = () => setIsEdu(true);
+  const closeEdu = () => setIsEdu(false);
 
-  const [isProject , setIsProject] = useState(false);
-  const openProject=()=>setIsProject(true);
-  const closeProject=()=>setIsProject(false);
+  const [isProject, setIsProject] = useState(false);
+  const openProject = () => setIsProject(true);
+  const closeProject = () => setIsProject(false);
 
-  const [isCertificates , setIsCertificates]=useState(false);
-  const openCertificates=()=>setIsCertificates(true);
-  const closeCertificates=()=>setIsCertificates(false);
+  const [isCertificates, setIsCertificates] = useState(false);
+  const openCertificates = () => setIsCertificates(true);
+  const closeCertificates = () => setIsCertificates(false);
 
-  const [isResearch ,setIsResearch] =useState(false);
-  const openResearch=()=>setIsResearch(true);
-  const closeResearch=()=>setIsResearch(false);
+  const [isResearch, setIsResearch] = useState(false);
+  const openResearch = () => setIsResearch(true);
+  const closeResearch = () => setIsResearch(false);
 
 
 
@@ -53,19 +62,19 @@ const ProfilePageMain = () => {
           </p>
           <div className="absolute right-4">
             <button className="flex gap-1 items-center px-3 py-1 border border-[#0073E6] text-[#0073E6] shadow-inner font-semibold rounded-full">
-                <FiPlus/>
-                Create Post
+              <FiPlus />
+              Create Post
             </button>
             <button>
-                
+
             </button>
           </div>
           <p className="text-[#0073E6] text-sm font-medium mb-4">
             906 Followers
           </p>
 
-          <div className="w-full">
-            {!myPost ? (
+        <div className="w-full">
+            {myPost.length === 0 ? (
               <p className="text-sm text-gray-500">
                 No post yet. Create a post to share with your connections.
               </p>
@@ -88,30 +97,29 @@ const ProfilePageMain = () => {
                   {myPost.map((post, index) => (
                     <div
                       key={index}
-                      className={index!=myPost.length - 1 ? "flex flex-col gap-3 p-2  border-b":"flex flex-col gap-3 p-2 "}
+                      className={
+                        index !== myPost.length - 1
+                          ? 'flex flex-col gap-3 p-2 border-b'
+                          : 'flex flex-col gap-3 p-2'
+                      }
                     >
                       <div className="flex items-start gap-4">
                         <div className="w-20 h-16">
                           {post.img && (
                             <img
-                              src={post.img || "/cover.png"}
+                              src={post.img || '/cover.png'}
                               alt="Post content"
                               className="object-cover w-full h-full rounded-md"
                             />
                           )}
                         </div>
                         <div className="flex-1 overflow-hidden">
-                          <span
-                            className={`text-[#1f1f1f] text-sm line-clamp-3`}
-                          >
+                          <span className="text-[#1f1f1f] text-sm line-clamp-3">
                             {post.text}
                           </span>
-                          
-                            <button
-                              className="text-[#434343] text-xs mt-1 hover:underline"
-                            >
-                              Show More
-                            </button>
+                          <button className="text-[#434343] text-xs mt-1 hover:underline">
+                            Show More
+                          </button>
                         </div>
                       </div>
                       <div className="flex items-center justify-between text-sm text-gray-500 pt-2">
@@ -125,9 +133,9 @@ const ProfilePageMain = () => {
             )}
           </div>
         </div>
-        <div className="text-center font-medium text-[#5d5d5d] py-2 cursor-pointer hover:bg-[#f9f9f9] bg-[#fff] rounded-b-lg border border-t-0">
+        <button className="text-center font-medium text-[#5d5d5d] py-2 cursor-pointer hover:bg-[#f9f9f9] bg-[#fff] rounded-b-lg border border-t-0" onClick={suggestpost}>
           Show all
-        </div>
+        </button>
       </div>
 
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
@@ -157,7 +165,6 @@ const ProfilePageMain = () => {
         </p>
         <button className="text-[#0073E6] text-[0.95rem]" onClick={openEdu}>Add Education</button>
         <EducationModal isOpen={isEdu} onClose={closeEdu} />
-          
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Responsibilities</p>
@@ -166,11 +173,11 @@ const ProfilePageMain = () => {
           leadership and expertise!
         </p>
         <button className="text-[#0073E6] text-[0.95rem]" onClick={openResp}>
-        Add Responsibility
-      </button>
+          Add Responsibility
+        </button>
 
-      {/* Modal component */}
-      <ResModal isOpen={isResp} onClose={closeResp} />
+        {/* Modal component */}
+        <ResModal isOpen={isResp} onClose={closeResp} />
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Certificate</p>
@@ -181,7 +188,7 @@ const ProfilePageMain = () => {
         <button className="text-[#0073E6] text-[0.95rem]" onClick={openCertificates} >
           Add Certificate
         </button>
-      <CertificateModal isOpen={isCertificates} onClose={closeCertificates} />
+        <CertificateModal isOpen={isCertificates} onClose={closeCertificates} />
 
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
@@ -191,7 +198,7 @@ const ProfilePageMain = () => {
           greatness!
         </p>
         <button className="text-[#0073E6] text-[0.95rem]" onClick={openProject}>Add Project</button>
-      <ProjectModal isOpen={isProject} onClose={closeProject} />
+        <ProjectModal isOpen={isProject} onClose={closeProject} />
       </div>
       <div className="flex flex-col gap-2 items-start bg-white py-3 px-5 rounded-xl border">
         <p className="font-medium text-lg text-[#4c4c4c]">Research Paper</p>
@@ -202,7 +209,7 @@ const ProfilePageMain = () => {
         <button className="text-[#0073E6] text-[0.95rem]" onClick={(openResearch)}>
           Add Research Paper
         </button>
-      <ResearchPaperModal isOpen={isResearch} onClose={closeResearch} />
+        <ResearchPaperModal isOpen={isResearch} onClose={closeResearch} />
 
 
       </div>
