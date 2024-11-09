@@ -6,7 +6,7 @@ import { FiPlus } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { USER } from "../../../utils/db/dummy";
 import RightPanelSkeleton from "../../components/skeletons/RightPanelSkeleton";
-import IntroModal from '../modals/introModal';
+import IntroModal from './modals/introModal';
 
 const ProfilePageSidebar = () => {
   const [isIntro, setIsIntro] = useState(false);

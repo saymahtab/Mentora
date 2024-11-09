@@ -1,13 +1,13 @@
 import React ,{useState} from "react";
 import { POSTS } from "../../../utils/db/dummy";
 import { FiPlus } from "react-icons/fi";
-import ResModal from "../modals/respnsibilty";
-import AboutModal from "../modals/aboutModal";
-import SkillModal from "../modals/skillsModal";
-import EducationModal from "../modals/educationModal";
-import ProjectModal from "../modals/projectModal";
-import CertificateModal from "../modals/certificateModal";
-import ResearchPaperModal from "../modals/researchModal";
+import ResModal from "./modals/respnsibilty";
+import AboutModal from "./modals/aboutModal";
+import SkillModal from "./modals/skillsModal";
+import EducationModal from "./modals/educationModal";
+import ProjectModal from "./modals/projectModal";
+import CertificateModal from "./modals/certificateModal";
+import ResearchPaperModal from "./modals/researchModal";
 
 const ProfilePageMain = () => {
   const myPost = POSTS.slice(2,6);
