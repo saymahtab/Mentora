@@ -6,8 +6,8 @@ import Signup from "./pages/auth/signup/Signup";
 import HomePage from "./pages/home/HomePage";
 import NavBar from "./components/common/NavBar";
 import ProfilePage from "./pages/profile/ProfilePage";
-import MentorPage from "./pages/mentor/MentorPage";
-import MentorCollection from "./pages/mentor/MentorCollection";
+import MentorPage from "./pages/mentor/MentorPage/MentorPage";
+import MentorCollection from "./pages/mentor/MentorCollection/MentorCollection";
 
 function App() {
   const login = true;

@@ -1,7 +1,7 @@
 import React from 'react'
-import MentorPageSidebar from '../../components/mentor/mentorPage/MentorPageSidebar'
-import MentorPageMain from '../../components/mentor/mentorPage/MentorPageMain'
-import MentorPagePanel from '../../components/mentor/mentorPage/MentorPagePanel'
+import MentorPageSidebar from './MentorPageSidebar'
+import MentorPageMain from './MentorPageMain'
+import MentorPagePanel from './MentorPagePanel'
 
 const MentorPage = () => {
   return (
