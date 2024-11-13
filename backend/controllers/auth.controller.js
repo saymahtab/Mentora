@@ -1,8 +1,8 @@
-const { User } = require("../models/user.model");
 const disposableDomains = require('disposable-email-domains');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const { generateTokenAndSetCookie } = require("../lib/utils/generateTokenAndSetCookie");
+const User = require('../models/User/user.model'); 
 
 const signup = async (req, res) => {
     try {
@@ -32,9 +32,25 @@ const signup = async (req, res) => {
             });
         }
 
+        // Check if email is already in use
         const existingEmail = await User.findOne({ email: { $regex: new RegExp("^" + email + "$", "i") } });
         if (existingEmail) {
             return res.status(400).json({ error: "Email is already taken" });
+        }
+
+        // Generate a unique username
+        const baseUsername = email.substring(0, 6).toLowerCase();
+        let userName;
+        let isUnique = false;
+
+        while (!isUnique) {
+            const randomNum = Math.floor(1000 + Math.random() * 9000); // Generates a 4-digit number
+            userName = `${baseUsername}${randomNum}`;
+
+            const existingUserName = await User.findOne({ userName });
+            if (!existingUserName) {
+                isUnique = true;
+            }
         }
 
         // Hash password
@@ -45,6 +61,9 @@ const signup = async (req, res) => {
         const newUser = new User({
             email: validator.normalizeEmail(email),
             password: hashedPassword,
+            userName,
+            profileImg: "",  
+            coverImg: "",  
         });
 
         await newUser.save();
@@ -52,11 +71,8 @@ const signup = async (req, res) => {
 
         return res.status(201).json({
             _id: newUser._id,
-            fullName: newUser.fullName,
             userName: newUser.userName,
             email: newUser.email,
-            profileImg: newUser.profileImg,
-            coverImg: newUser.coverImg,
         });
     } catch (error) {
         console.error("Error in signup controller:", error.message);
@@ -64,26 +80,29 @@ const signup = async (req, res) => {
     }
 };
 
+
+
 const login = async (req, res) => {
     try {
         const { userName, password } = req.body;
 
-        // Check if both username and password are provided
+        // Check if both identifier (username, email, or phone number) and password are provided
         if (!userName || !password) {
-            return res.status(400).json({ error: "Username and password are required" });
+            return res.status(400).json({ error: "Username/email/phone number and password are required" });
         }
 
-        // Case-insensitive search for user by username or email
+        // Case-insensitive search for user by username, email, or mobile
         const user = await User.findOne({
             $or: [
                 { userName: { $regex: new RegExp("^" + userName + "$", "i") } },
                 { email: { $regex: new RegExp("^" + userName + "$", "i") } },
+                { mobile: userName }  // Assumes exact match for mobile number
             ],
         });
 
         // Check if user exists and password is correct
         if (!user || !(await bcrypt.compare(password, user.password))) {
-            return res.status(404).json({ error: "Invalid username or password" });
+            return res.status(404).json({ error: "Invalid username/email/phone number or password" });
         }
 
         // Generate JWT token and set it in cookie
@@ -92,9 +111,9 @@ const login = async (req, res) => {
         // Send user data as response
         res.status(200).json({
             _id: user._id,
-            fullName: user.fullName,
             userName: user.userName,
             email: user.email,
+            mobile: user.mobile,
             profileImg: user.profileImg,
             coverImg: user.coverImg,
         });
@@ -103,6 +122,7 @@ const login = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
 
 const logout = (req, res) => {
     try {
