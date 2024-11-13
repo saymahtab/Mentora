@@ -8,6 +8,7 @@ import { IoTimeOutline } from 'react-icons/io5';
 import { FiClipboard } from 'react-icons/fi';
 
 const MentorProfileCard = ({ isLiked, toggleLike, mentor }) => {
+  
   return (
     <div className='bg-white rounded-lg border'>
       <div className="relative bg-white rounded-lg">

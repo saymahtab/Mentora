@@ -16,7 +16,7 @@ const MentorPageSidebar = () => {
                 </Link>
             </div>
             <div className='hover:bg-[#f5f5f5] py-4'>
-                <Link to='/' className='flex items-center gap-2 text-[#404040] pl-3'>
+                <Link to='/mentor/dashboard' className='flex items-center gap-2 text-[#404040] pl-3'>
                     <MdSpaceDashboard className='size-5'/>
                     <p className='font-medium'>Mentor Dashboard</p>
                 </Link>

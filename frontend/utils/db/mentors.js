@@ -7,7 +7,7 @@ export const mentors = [
     firstName: 'Yash',
     lastName: 'Patel',
     bio: "Strategy Manager @CEO Office | Want to Join the Top 1% league? | Ex-eBay & L&T | MDI Gurgaon . ESCP Europe | 32+ National Case Comps Podiums | Traveled to 23+ Countries",
-    currentOrganization: "",
+    currentOrganization: "Google",
     organisationLogo: '',
     industry: "Technology",
     isTopMentor: true,
@@ -16,10 +16,16 @@ export const mentors = [
     shortHeading: "Helping you become a full-stack powerhouse.",
     about: "With over 15 years in development, I’ve mentored junior devs, and delivered industry-proven practices to help build their careers in tech.",
     languages: ["English", "Spanish"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/alexbaker",
-      twitter: "https://twitter.com/alexbakerdev"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Business And Management",
       topics: ['Web Development Basics', 'Master JavaScript', 'React & Node.js', 'DevOps Essentials'],
@@ -143,7 +149,7 @@ export const mentors = [
         rating: 5 
       }
     ],
-    totalSessions: 1416,
+    totalSessions: 144,
     totalDuration: 3550,
     totalReviews: 168,
     avgRating: 4.9,
@@ -165,10 +171,16 @@ export const mentors = [
     shortHeading: "Helping you master Data Science and Machine Learning.",
     about: "With over 8 years in the field, I've mentored 150+ professionals in transitioning to data science, building ML models, and preparing for tech interviews.",
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/rahulverma",
-      twitter: "https://twitter.com/rahulverma"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Engineering, Technology & Data",
       topics: ['Data Analysis', 'Model Building', 'Career Transitions', 'Python', 'R Programming'],
@@ -252,10 +264,16 @@ export const mentors = [
     shortHeading: "Turning design ideas into reality.",
     about: "I specialize in mentoring aspiring designers on UI/UX design principles, portfolio building, and career guidance in tech design.",
     languages: ["English"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/anjalisingh",
-      dribbble: "https://dribbble.com/anjalisingh"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['User Research', 'Wireframing', 'Prototyping', 'Portfolio Review'],
@@ -327,10 +345,16 @@ export const mentors = [
     shortHeading: "Empowering brands to reach new heights in digital space.",
     about: "Helping clients maximize their online visibility through SEO, content marketing, and social media strategy.",
     languages: ["English", "Gujarati"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/karanmehta",
-      twitter: "https://twitter.com/karanmehta"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['SEO Strategy', 'Social Media Marketing', 'Content Creation', 'Brand Development'],
@@ -402,9 +426,16 @@ export const mentors = [
     shortHeading: "Teaching modern JavaScript and full-stack skills.",
     about: "Specializing in full-stack web development with hands-on experience in React, Node.js, and cloud deployments. Mentored 100+ developers.",
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/nishakapoor",
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['React', 'Node.js', 'JavaScript ES6+', 'APIs'],
@@ -476,9 +507,16 @@ export const mentors = [
     shortHeading: "Helping you break into finance with expert insights.",
     about: "Experienced in financial modeling, valuations, and investment analysis. Mentored over 80 finance aspirants on career growth.",
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/arjunrao",
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['Financial Modeling', 'Valuation Analysis', 'Equity Research'],
@@ -550,9 +588,16 @@ export const mentors = [
     shortHeading: "Guiding you to build a strong career foundation.",
     about: "Over 9 years in recruitment and HR. I focus on resume building, interview prep, and career planning. Mentored 200+ candidates.",
     languages: ["English"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/priyadesai",
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['Resume Writing', 'Interview Preparation', 'Career Growth'],
@@ -624,9 +669,16 @@ export const mentors = [
     shortHeading: "Protect your data and stay secure online.",
     about: "With a focus on ethical hacking and cyber defense strategies, I've mentored many in cybersecurity basics and advanced defense.",
     languages: ["English"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/ankitmishra",
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['Cyber Defense', 'Network Security', 'Vulnerability Assessment'],
@@ -698,11 +750,16 @@ export const mentors = [
     shortHeading: "Helping you unlock the power of data.",
     about: `With experience in machine learning, statistical analysis, and big data, I help individuals and companies leverage data to make better decisions. I'm passionate about teaching complex concepts in simple terms.`,
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/nehagupta",
-      facebook: "https://facebook.com/nehagupta",
-      instagram: "https://instagram.com/nehagupta"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Engineering, Technology & Data",
       topics: ['Data Preprocessing', 'Data Visualization', 'Machine Learning Algorithms', 'Model Evaluation'],
@@ -798,11 +855,16 @@ export const mentors = [
     shortHeading: "Building modern and scalable web apps.",
     about: `With years of experience in full-stack web development, I specialize in creating responsive, efficient, and high-performing web applications using JavaScript, React, and Node.js.`,
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/amitsharma",
-      facebook: "https://facebook.com/amitsharma",
-      instagram: "https://instagram.com/amitsharma"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['React Development', 'Node.js', 'REST APIs', 'Web Architecture', 'Performance Optimization'],
@@ -898,11 +960,16 @@ export const mentors = [
     shortHeading: "Blockchain is the future, let’s build it together.",
     about: `I specialize in decentralized applications and smart contract development. Passionate about blockchain technology, I work with cutting-edge tools to create secure and scalable applications.`,
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/rohitverma",
-      facebook: "https://facebook.com/rohitverma",
-      instagram: "https://instagram.com/rohitverma"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['Smart Contracts', 'Decentralized Applications', 'Ethereum', 'Blockchain Development', 'Cryptocurrency Trading'],
@@ -998,11 +1065,16 @@ export const mentors = [
     shortHeading: "Let’s scale your business with robust DevOps solutions.",
     about: `As a DevOps engineer, I specialize in creating scalable and efficient CI/CD pipelines, automating cloud infrastructure, and ensuring smooth and secure deployments. I focus on cloud computing and automation tools to make the deployment process seamless.`,
     languages: ["English", "Hindi"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/vikramsingh",
-      facebook: "https://facebook.com/vikramsingh",
-      instagram: "https://instagram.com/vikramsingh"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['AWS', 'Docker', 'CI/CD', 'Automation', 'Cloud Infrastructure'],
@@ -1098,9 +1170,16 @@ export const mentors = [
     shortHeading: "Building the future of technology.",
     about: "Experienced software engineer with a proven track record of developing high-quality applications. Adept in various programming languages and frameworks.",
     languages: ["English", "Spanish"],
-    socialLinks: {
-      linkedIn: "https://linkedin.com/in/johndoe",
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     expertise: {
       domain: "Product & Design",
       topics: ['React', 'Node.js', 'Cloud Computing'],
@@ -1192,11 +1271,16 @@ export const mentors = [
     "shortHeading": "Let’s bring your web application ideas to life.",
     "about": "With expertise in React.js, Node.js, and cloud technologies, I specialize in building robust and scalable web applications. I focus on end-to-end development, from UI/UX design to server-side logic.",
     "languages": ["English", "Telugu"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/sanjayreddy",
-      "facebook": "https://facebook.com/sanjayreddy",
-      "instagram": "https://instagram.com/sanjayreddy"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       domain: "Product & Design",
       "topics": ["React.js", "Node.js", "MongoDB", "Express.js", "JavaScript"],
@@ -1291,11 +1375,16 @@ export const mentors = [
     "shortHeading": "Turning data into actionable insights.",
     "about": "As a Data Scientist, I specialize in machine learning, deep learning, and data analysis. My focus is on extracting meaningful insights from large datasets to drive business decisions.",
     "languages": ["English", "Hindi"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/priyasharma",
-      "facebook": "https://facebook.com/priyasharma",
-      "instagram": "https://instagram.com/priyasharma"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       "domain": "Product & Design",
       "topics": ["Python", "R", "TensorFlow", "Data Analysis", "Deep Learning"],
@@ -1390,11 +1479,16 @@ export const mentors = [
     "shortHeading": "Optimizing your cloud journey.",
     "about": "With a deep understanding of cloud infrastructure and services, I help businesses migrate to the cloud seamlessly, optimizing performance and cost-efficiency along the way.",
     "languages": ["English", "Tamil"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/karthiknair",
-      "facebook": "https://facebook.com/karthiknair",
-      "instagram": "https://instagram.com/karthiknair"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       domain: "Product & Design",
       "topics": ["AWS", "Azure", "GCP", "DevOps", "Cloud Security"],
@@ -1489,11 +1583,16 @@ export const mentors = [
     "shortHeading": "Building seamless mobile experiences.",
     "about": "Specialized in Android and iOS mobile development, I help businesses transform their ideas into fully-functional mobile applications with a focus on performance and user experience.",
     "languages": ["English", "Gujarati"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/nikhilpatel",
-      "facebook": "https://facebook.com/nikhilpatel",
-      "instagram": "https://instagram.com/nikhilpatel"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       domain: "Product & Design",
       "topics": ["Kotlin", "Swift", "Flutter", "Android Studio", "Xcode"],
@@ -1579,11 +1678,16 @@ export const mentors = [
     "shortHeading": "Building scalable web applications.",
     "about": "I specialize in both front-end and back-end development, focusing on building fast, scalable, and maintainable web applications. I have experience with React, Node.js, and MongoDB.",
     "languages": ["English", "Hindi"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/rajsharma",
-      "facebook": "https://facebook.com/rajsharma",
-      "instagram": "https://instagram.com/rajsharma"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       domain: "Product & Design",
       "topics": ["React.js", "Node.js", "MongoDB", "Express.js"],
@@ -1668,11 +1772,16 @@ export const mentors = [
     "shortHeading": "Empowering AI models for better decisions.",
     "about": "With a strong background in machine learning and deep learning, I help companies leverage AI to improve business outcomes, automate tasks, and deliver intelligent solutions.",
     "languages": ["English", "Punjabi"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/vikramsingh",
-      "facebook": "https://facebook.com/vikramsingh",
-      "instagram": "https://instagram.com/vikramsingh"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       domain: "Product & Design",
       "topics": ["Data Science", "Deep Learning", "TensorFlow", "PyTorch"],
@@ -1757,11 +1866,16 @@ export const mentors = [
     "shortHeading": "Cloud solutions for scalable business.",
     "about": "As a Cloud Solutions Architect, I assist enterprises in leveraging the power of cloud computing for business transformation. My expertise includes AWS, Azure, and Google Cloud Platform.",
     "languages": ["English", "Hindi"],
-    "socialLinks": {
-      "linkedIn": "https://linkedin.com/in/sandeepverma",
-      "facebook": "https://facebook.com/sandeepverma",
-      "instagram": "https://instagram.com/sandeepverma"
-    },
+    socialLinks: [
+      {
+        name: "linkedin",
+        link: "https://linkedin.com/in/saymahtab",
+      },
+      {
+        name: "instagram",
+        link: "https://twitter.com/saymahtab"
+      }
+    ],
     "expertise": {
       domain: "Product & Design",
       "topics": ["Cloud Architecture", "AWS", "Google Cloud", "Azure", "DevOps"],

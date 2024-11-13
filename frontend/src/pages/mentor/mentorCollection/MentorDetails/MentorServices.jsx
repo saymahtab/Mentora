@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MentorServices = ({mentor}) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="bg-white rounded-lg border shadow-sm mt-2 pb-4">
       <h2 className="text-xl font-semibold ml-6 mt-3 text-zinc-700">
@@ -30,7 +34,10 @@ const MentorServices = ({mentor}) => {
                   </p>
                 </div>
               </div>
-              <button className="border-2 border-zinc-700 px-4 py-1 rounded-full text-zinc-700 transition-all duration-300 hover:shadow-[inset_0_0_0_1px_black]">
+              <button 
+                className="border-2 border-zinc-700 px-4 py-1 rounded-full text-zinc-700 transition-all duration-300 hover:shadow-[inset_0_0_0_1px_black]"
+                onClick={() => navigate('/booking')}
+              >
                 Book Now
               </button>
             </div>
