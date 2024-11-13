@@ -6,6 +6,11 @@ export default function Lobby() {
     const [userName, setUserName] = useState('');
     const navigate = useNavigate();
 
+    const generateId=()=>{
+        return Math.floor(100000 + Math.random()*900000);
+    }
+    console.log(generateId());
+
     const handleJoinRoom = () => {
         if (roomCode && userName) {
             navigate(`/room/${roomCode}`, { state: { userName } });

@@ -16,6 +16,13 @@ export const MentorSlotProvider=({children}) =>{
         { id: 8, date: "2024-11-11", time: "12:00 PM", isBooked: false, bookedBy: null },
         { id: 9, date: "2024-11-11", time: "01:00 PM", isBooked: false, bookedBy: null },
         { id: 10, date: "2024-11-11", time: "02:00 PM", isBooked: false, bookedBy: null },
+
+        { id: 11, date: "2024-11-15", time: "10:00 AM", isBooked: false, bookedBy: null },
+        { id: 12, date: "2024-11-14", time: "11:00 AM", isBooked: false, bookedBy: null },
+        { id: 13, date: "2024-11-15", time: "12:00 PM", isBooked: false, bookedBy: null },
+        { id: 14, date: "2024-11-15", time: "01:00 PM", isBooked: false, bookedBy: null },
+        { id: 15, date: "2024-11-14", time: "02:00 PM", isBooked: false, bookedBy: null },
+        { id: 16, date: "2024-11-13", time: "04:04 PM", isBooked: false, bookedBy: null },
       ]);
       
 
