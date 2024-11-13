@@ -7,6 +7,7 @@ import MentorSlotContext from "../context/mentorBookingContext";
 import CountdownTimer from "../skeletons/countDownBooking";
 import { USER } from "../../../utils/db/dummy";
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import SessionStatsProgress from "./sessionStats";
 
 const MentorBooking = ({ mentorid }) => {
   const navigate = useNavigate();
@@ -14,7 +15,6 @@ const MentorBooking = ({ mentorid }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [alertMessage, setAlertMessage] = useState("");
   const [selectedSlot, setSelectedSlot] = useState(null);
-
 
   const user = USER[5];
 
@@ -52,7 +52,7 @@ const MentorBooking = ({ mentorid }) => {
     }
     return totalStars;
   }
-
+  
   return (
     <div className="flex flex-col lg:flex-row max-w-6xl mx-auto p-6 -z bg-white shadow-lg rounded-lg space-y-6 lg:space-y-0 lg:space-x-6 mt-10">
       {/* Mentor Profile Section */}
@@ -181,18 +181,32 @@ const MentorBooking = ({ mentorid }) => {
                           />
                         </svg>
                       )}
-                      <span className="text-sm">
-                        {slot.isBooked ? `Selected ${slot.time}` : selectedSlot ? `Book Now ${slot.time}` : `Book Now ${slot.time}`}
+                      <span
+                        className={`text-sm ${slot.isBooked ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500 cursor-pointer'}`}
+                        onClick={() => {
+                          if (!slot.isBooked) {
+                            navigate(`/sessionStats`, {
+                              state: {
+                                endDate: slot.date,
+                                endTime: slot.time,
+                                slots: slot
+                              }
+                            });
+                          }
+                        }}
+                      >
+                        {slot.isBooked ? `Selected ${slot.time}` : `Book Now ${slot.time}`}
                       </span>
+
                     </div>
                   </button>
 
                   {/* Countdown Timer */}
-                  {selectedSlot && selectedSlot.id === slot.id && (
+                  {/* {selectedSlot && selectedSlot.id === slot.id && (
                     <div className="mt-4 p-4 bg-green-100 rounded-lg shadow-md text-center">
-                      <CountdownTimer endDate={slot.date} endTime={slot.time} />
+                      <SessionStatsProgress endDate={slot.date} endTime={slot.time} />
                     </div>
-                  )}
+                  )} */}
                 </li>
               ))}
           </ul>
@@ -211,13 +225,6 @@ const MentorBooking = ({ mentorid }) => {
             {notification}
           </div>
         )}
-
-        <button disabled={!selectedSlot}
-          className={`w-full mt-4 py-2 px-4 rounded-lg text-white font-semibold
-            ${!selectedSlot ? "bg-gray-400 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"}`}
-          onClick={() => navigate(`/mentor/collection`)}>
-          Continue
-        </button>
       </div>
     </div>
   );

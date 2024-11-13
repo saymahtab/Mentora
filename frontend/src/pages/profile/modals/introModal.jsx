@@ -281,16 +281,9 @@ const IntroModal = ({ isOpen, onClose }) => {
                 >
                     Submit
                 </button>
-<<<<<<< HEAD
-=======
                 </div>
->>>>>>> 34a95bfbec02b7abed56f03a6a88e4b4f745f00c
             </div>
     );
 };
 
-<<<<<<< HEAD
 export default IntroModal;
-=======
-export default IntroModal;
->>>>>>> 34a95bfbec02b7abed56f03a6a88e4b4f745f00c
