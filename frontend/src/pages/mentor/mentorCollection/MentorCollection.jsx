@@ -1,17 +1,27 @@
-import React from 'react'
-import MentorCollectionSide from './MentorCollectionSide'
-import MentorCollectionMain from './MentorCollectionMain'
+import React, {useState} from 'react'
+import { mentors } from '../../../../utils/db/mentors'
+import MentorDetails from './MentorDetails/MentorDetails';
+import MentorSidebar from './MentorSidebar/MentorSidebar';
+import FilterNav from '../FilterNav/FilterNav';
 
 const MentorCollection = () => {
+
+  const [selectedMentor, setSelectedMentor] = useState(mentors[0]);
+
   return (
     <>
-      
-      <div className="flex max-w-[74rem] mx-auto relative mt-2 top-[3.2rem] h-[calc(100vh-3.2rem)]">
-        <MentorCollectionSide />
-        <div className="flex-[4_4_0] h-full min-h-0">
-            <MentorCollectionMain />
-        </div>
-      </div>  
+      <FilterNav />
+      <div className='flex max-w-[74rem] mx-auto relative top-[7.3rem]'>
+        <MentorSidebar 
+          mentors={mentors}
+          onSelectMentor={mentor => setSelectedMentor(mentor)}
+        />
+
+        <MentorDetails
+          mentor={selectedMentor}
+          onClose={() => setSelectedMentor(null)}
+        />
+      </div>
     </>
   )
 }
