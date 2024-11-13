@@ -13,9 +13,11 @@ import {
 } from "react-icons/fa";
 import { MdOutlineWorkOutline } from 'react-icons/md';
 import { IoSchoolSharp } from "react-icons/io5";
+import MentorBooking from "../../../components/booking/mentorBooking";
 
 const MentorCollectionMain = () => {
   const Mentor = mentors[0];
+  const id=0;
 
   return (
     <div className="bg-[#F6F6F6]] rounded-lg ml-2 h-full max-h-full">
@@ -74,7 +76,29 @@ const MentorCollectionMain = () => {
             </div>
           </article>
         </section>
-
+        
+        {/* <section className="flex items-start flex-col px-6 py-5 bg-white rounded-lg border mt-2 text-zinc-700">
+          <h2 className="text-xl font-semibold mb-4">Services</h2>
+          {Mentor.services.map((service, index) => (
+            <div key={index} className="px-4 py-3 border w-full rounded-2xl mt-2">
+              <span className="bg-[#FCE8EF] px-4 text-sm py-1 rounded-full text-[#6E1434] font-medium">
+                1:1 Call
+              </span>
+              <div className="flex items-start justify-between p-1 mt-2">
+                <div className="flex flex-col items-start">
+                  <p className="text-xl font-normal">{service.name}</p>
+                  <p className="text-[#626262]">{service.duration} min</p>
+                  <p className="mt-2 font-medium text-xl text-[#474747]">${service.price}</p>
+                </div>
+                <Link to="/book/:">
+                  <button className="px-4 py-2 border border-[#626262] rounded-full">
+                    Book Now
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </section> */}
         <section className="flex items-start flex-col px-6 py-5 bg-white rounded-lg border mt-2 text-zinc-700">
           <h2 className="text-xl font-semibold mb-4">Services</h2>
           {Mentor.services.map((service, index) => (
@@ -88,9 +112,11 @@ const MentorCollectionMain = () => {
                   <p className="text-[#626262]">{service.duration} min</p>
                   <p className="mt-2 font-medium text-xl text-[#474747]">${service.price}</p>
                 </div>
-                <button className="px-4 py-2 border border-[#626262] rounded-full">
-                  Book Now
-                </button>
+                <Link to={`/booking`}>  {/* Use dynamic mentor ID in the link */}
+                  <button className="px-4 py-2 border border-[#626262] rounded-full">
+                    Book Now
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -117,31 +143,31 @@ const MentorCollectionMain = () => {
               <p className="text-[#6b6b6b]">{Mentor.totalReviews} Reviews</p>
             </div>
             <div className="p-5 flex flex-col items-start gap-6 w-full border rounded-3xl ml-3 text-[#4b4b4b] mb-3">
-            {Mentor.reviews.map(review => (
-              <div className="flex items-start flex-col border-b w-full">
-              <div className="flex items-start justify-between pb-1 w-full">
-                <div className="flex gap-3 items-start">
-                  <div className="flex w-11" >
-                    <img
-                      src={Mentor.profile.profileImg || "/avatar-placeholder.png"}
-                      className="cursor-pointer rounded-full"
-                    />
+              {Mentor.reviews.map(review => (
+                <div className="flex items-start flex-col border-b w-full">
+                  <div className="flex items-start justify-between pb-1 w-full">
+                    <div className="flex gap-3 items-start">
+                      <div className="flex w-11" >
+                        <img
+                          src={Mentor.profile.profileImg || "/avatar-placeholder.png"}
+                          className="cursor-pointer rounded-full"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-md font-medium leading-4">{review.menteeName}</p>
+                        <p className="text-xs text-[#595959] mt-1">07 Nov 24, 08:47 PM IST</p>
+                      </div>
+                    </div>
+                    <span className="flex items-center gap-1 bg-green-700 rounded-md px-2 text-sm font-medium text-white">
+                      {review.rating}
+                      <FaStar className="size-3" />
+                    </span>
                   </div>
-                  <div>
-                    <p className="text-md font-medium leading-4">{review.menteeName}</p>
-                    <p className="text-xs text-[#595959] mt-1">07 Nov 24, 08:47 PM IST</p>
-                  </div>
+                  <p className="text-[#757575] pb-3">{review.message}</p>
                 </div>
-                <span className="flex items-center gap-1 bg-green-700 rounded-md px-2 text-sm font-medium text-white">
-                  {review.rating} 
-                  <FaStar  className="size-3"/>
-                </span>
-              </div>
-              <p className="text-[#757575] pb-3">{review.message}</p>
+              ))}
             </div>
-            ))}
-            </div>
-          </div>  
+          </div>
           <button className="text-[#0073E6] font-medium absolute bottom-5 left-64">Show More</button>
         </section>
 
@@ -168,13 +194,13 @@ const MentorCollectionMain = () => {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-start gap-3">
               <div className="h-8 w-8 bg-blue-900 text-white text-center pt-1 text-sm">
-                  SH
+                SH
               </div>
               <div className="flex items-start flex-col gap-1">
                 <p className="leading-3 text-sm ">ESCP Business School, Berlin campus, Berlin, Germany</p>
                 <p className="text-sm mt-1 flex gap-2 items-center">
-                <IoSchoolSharp className="size-4"/>
-                PGDM-IB
+                  <IoSchoolSharp className="size-4" />
+                  PGDM-IB
                 </p>
                 <p className="text-sm flex gap-2 items-center">
                   <MdOutlineWorkOutline />
@@ -184,12 +210,12 @@ const MentorCollectionMain = () => {
 
             <div className="flex items-start gap-3 mt-5">
               <div className="h-8 w-8 bg-blue-900 text-white text-center pt-1 text-sm">
-                  MH
+                MH
               </div>
               <div className="flex items-start flex-col gap-1">
                 <p className="leading-3 text-sm ">Maharaja Sayajirao University of Baroda (MSU), Vadodara</p>
                 <p className="text-sm mt-1 flex gap-2 items-center">
-                <IoSchoolSharp className="size-4"/>
+                  <IoSchoolSharp className="size-4" />
                   MiM
                 </p>
                 <p className="text-sm flex gap-2 items-center">
@@ -205,12 +231,12 @@ const MentorCollectionMain = () => {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-start gap-3">
               <div className="h-8 w-8 bg-blue-900 text-white text-center pt-1 text-sm">
-                  PI
+                PI
               </div>
               <div className="flex items-start flex-col gap-1">
                 <p className="leading-3 text-sm ">Strategic Global Project Intern</p>
                 <p className="text-sm mt-1 flex gap-2 items-center">
-                <IoSchoolSharp className="size-4"/>
+                  <IoSchoolSharp className="size-4" />
                   Ebay
                 </p>
                 <p className="text-sm flex gap-2 items-center">
@@ -221,12 +247,12 @@ const MentorCollectionMain = () => {
 
             <div className="flex items-start gap-3 mt-5">
               <div className="h-8 w-8 bg-blue-900 text-white text-center pt-1 text-sm">
-                  Larsen
+                Larsen
               </div>
               <div className="flex items-start flex-col gap-1">
                 <p className="leading-3 text-sm ">Business Developer</p>
                 <p className="text-sm mt-1 flex gap-2 items-center">
-                <IoSchoolSharp className="size-4"/>
+                  <IoSchoolSharp className="size-4" />
                   MiM
                 </p>
                 <p className="text-sm flex gap-2 items-center">
