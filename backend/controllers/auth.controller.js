@@ -6,10 +6,10 @@ const User = require('../models/User/user.model');
 
 const signup = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, firstName, lastName } = req.body;
 
         // Check if all required fields are provided
-        if (!email || !password) {
+        if (!email || !password || !firstName || !lastName) {
             return res.status(400).json({ error: "All fields are required" });
         }
 
@@ -62,6 +62,8 @@ const signup = async (req, res) => {
             email: validator.normalizeEmail(email),
             password: hashedPassword,
             userName,
+            firstName,
+            lastName,
             profileImg: "",  
             coverImg: "",  
         });
@@ -72,6 +74,8 @@ const signup = async (req, res) => {
         return res.status(201).json({
             _id: newUser._id,
             userName: newUser.userName,
+            firstName: newUser.firstName,
+            lastName: newUser.lastName,
             email: newUser.email,
         });
     } catch (error) {
@@ -79,6 +83,7 @@ const signup = async (req, res) => {
         return res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
 
 
 
