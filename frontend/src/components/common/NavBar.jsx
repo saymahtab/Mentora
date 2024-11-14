@@ -21,8 +21,13 @@ const NavBar = () => {
         <div className="flex items-center gap-4">
           {/* Logo */}
           <div className="logo">
+<<<<<<< HEAD
             <Link to="/home">
               <p className="font-bold xs:text-[1.3rem] text-[#172E59] text-lg">Mentora</p>
+=======
+            <Link to="/">
+              <p className="font-bold xs:text-[1.3rem] text-blue-700 text-lg">Mentora</p>
+>>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
             </Link>
           </div>
 
@@ -109,7 +114,7 @@ const NavBar = () => {
           </li>
           <li className="flex flex-col items-center hover:text-blue-600 cursor-pointer">
             <BiUser className="text-lg" />
-            <span>Mentors</span>
+            <span>Mentorship</span>
           </li>
           <li className="flex flex-col items-center hover:text-blue-600 cursor-pointer">
             <BiBriefcaseAlt className="text-lg" />
@@ -121,7 +126,7 @@ const NavBar = () => {
           </li>
           <li className="flex flex-col items-center hover:text-blue-600 cursor-pointer">
             <BiUser className="text-lg" />
-            <span>Practice</span>
+            <span>My Network</span>
           </li>
         </ul>
       </div>

@@ -34,7 +34,11 @@ const Login = () => {
 
       if (response.ok) {
         console.log('Login successful');
+<<<<<<< HEAD
         navigate('/home')
+=======
+        navigate('/')
+>>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
         // Redirect or additional logic here
       } else {
         const data = await response.json();
@@ -42,7 +46,11 @@ const Login = () => {
       }
     } catch (error) {
       setError('An error occurred. Please try again.');
+<<<<<<< HEAD
       navigate('/auth/login')
+=======
+      navigate("/auth/login")
+>>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
     }
   };
 
@@ -53,9 +61,9 @@ const Login = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between min-h-screen">
       {/* Left Section */}
-      <section className="flex-1 flex-col lg:px-14 px-5 pl-5 py-16 items-start font-poppins">
+      <section className="flex-1 flex-col lg:px-14 px-5 pl-5 py-14 items-start font-poppins">
         <Link to={'/'}>
-          <div className="text-2xl lg:text-3xl font-extrabold text-purple-700 cursor-pointer mb-10 lg:mb-16">
+          <div className="text-2xl lg:text-2xl font-extrabold text-purple-700 cursor-pointer mb-10 lg:mb-10">
             Mentora
           </div>
         </Link>

@@ -13,54 +13,78 @@ const userSchema = new mongoose.Schema({
   userName: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  profileImg: String,
-  coverImg: String,
+  profileImg: { type: String },
+  coverImg: { type: String },
   mobile: { type: String },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   pronouns: { type: String, enum: ['He/Him/His', 'She/Her', 'They/Them', 'Do not want to show'] },
   gender: { type: String, enum: ['Male', 'Female', 'Other'] },
+<<<<<<< HEAD:backend/models/User/user.model.js
   customGender: String,
   type: { type: String, enum: ['College Student', 'School Student', 'Professional', 'Fresher', 'Recruiter', 'Organizer', 'Other'] },
   collegeStudent: {
     course: String,
     CourseSpecialization: String,
     courseDuration: { startYear: String, endYear: String },
+=======
+  customGender: { type: String },
+  type: { type: String, enum: ['College Student', 'School Student', 'Professional', 'Fresher', 'Recruiter', 'Organizer', 'Other'] },
+
+  collegeStudent: {
+    course: { type: String },
+    CourseSpecialization: { type: String },
+    courseDuration: {
+      startYear: { type: String },
+      endYear: { type: String }
+    }
+>>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9:backend/models/User/user1.model.js
   },
+
   schoolStudent: {
-    class: String,
+    class: { type: String }
   },
+
   professional: {
-    workExperience: String,
-    currentSector: String,
-    designation: String,
-    lookingForCareerChange: Boolean,
+    workExperience: { type: String },
+    currentSector: { type: String },
+    designation: { type: String },
+    lookingForCareerChange: { type: Boolean }
   },
+
   fresher: {
-    interestedSector: String,
-    course: String,
-    courseDuration: { startYear: String, endYear: String },
+    interestedSector: { type: String },
+    course: { type: String },
+    courseDuration: {
+      startYear: { type: String },
+      endYear: { type: String }
+    }
   },
-  organisation: String,
-  location: String,
-  dob: Date,
+
+  organisation: { type: String },
+  location: { type: String },
+  dob: { type: Date },
+
   currentAddress: addressSchema,
   permanentAddress: addressSchema,
-  bio: String,
+
+  bio: { type: String },
   about: {
-    purpose: { type: String, enum: ['Open to work', 'Hiring', 'Compete & upskill'], required: false },
-    interests: [String],
-    aboutMe: String,
+    purpose: { type: String, enum: ['Open to work', 'Hiring', 'Compete & upskill'] },
+    interests: [{ type: String }],
+    aboutMe: { type: String }
   },
-  skills: [String],
+
+  skills: [{ type: String }],
   education: [educationSchema],
   workExperience: [workExperienceSchema],
   responsibilities: [responsibilitySchema],
   certificates: [certificateSchema],
   projects: [projectSchema],
   achievements: [achievementSchema],
-  hobbies: [String],
+  hobbies: [{ type: String }],
   socialLinks: socialLinksSchema,
+<<<<<<< HEAD:backend/models/User/user.model.js
   connections: { type: Number, default: 0 },
   followers: [
     {
@@ -76,8 +100,16 @@ const userSchema = new mongoose.Schema({
       default: [],
     },
   ],
+=======
+
+  connections: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+
+  following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+
+>>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9:backend/models/User/user1.model.js
   searchAppearance: { type: Number, default: 0 },
-  savedItems: [savedItemSchema],
+  savedItems: [savedItemSchema]
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
