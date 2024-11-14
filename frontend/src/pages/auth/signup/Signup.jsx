@@ -42,6 +42,7 @@ const Signup = () => {
       }
     } catch (error) {
       setError('An error occurred. Please try again.');
+      navigate("/auth/signup")
     }
   };
 
@@ -52,9 +53,9 @@ const Signup = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between min-h-screen">
       {/* Left Section */}
-      <section className="flex-1 lg:px-14 px-5 pl-5 py-16 font-poppins">
+      <section className="flex-1 lg:px-14 px-5 pl-5 py-8 font-poppins">
         <Link to="/">
-          <div className="text-2xl lg:text-3xl font-extrabold text-purple-700 cursor-pointer mb-10 lg:mb-16">
+          <div className="text-2xl lg:text-2xl font-extrabold text-purple-700 cursor-pointer mb-10 lg:mb-6">
             Mentora
           </div>
         </Link>

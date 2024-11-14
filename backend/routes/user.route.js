@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { protectRoute } = require('../middlewares/protectRoute');
-const { getUserProfile, getSuggestedUsers, followUnfollowUser, updateUser } = require('../controllers/user.controller')
+const { getUserProfile, followUnfollowUser, getSuggestedUsers, updateUserProfile, updateUser } = require('../controllers/user.controller');
 
 const userRoutes = Router();
 

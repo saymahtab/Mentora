@@ -1,11 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
-<<<<<<< HEAD
 const cors = require('cors');
 
-=======
->>>>>>> 0d82e5aeffe3f2c4405842699973919c193f54fd
 const { connectMongoDB } = require('./config/connectMongoDB');
 
 const { authRoutes } = require('./routes/auth.route');
