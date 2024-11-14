@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import Welcome from "./pages/welcome/Welcome";
 import Login from "./pages/auth/login/Login";
@@ -7,29 +7,21 @@ import HomePage from "./pages/home/HomePage";
 import NavBar from "./components/common/NavBar";
 import ProfilePage from "./pages/profile/ProfilePage";
 import MentorPage from "./pages/mentor/MentorPage/MentorPage";
-import MentorCollection from "./pages/mentor/MentorCollection/MentorCollection";
+import MentorCollection from "./pages/mentor/mentorCollection/MentorCollection";
 import { MentorSlotProvider } from "./components/context/mentorBookingContext";
 import MentorBooking from "./components/booking/mentorBooking";
 import MentorDashboard from "./pages/mentor/mentorDashboard/mentorDashboard";
 import Lobby from "./pages/videoChat/lobby/index";
 import Room from "./pages/videoChat/room/index";
 import SessionStatsProgress from "./components/booking/sessionStats";
-<<<<<<< HEAD
-import ChatRoom from "./pages/chat/index";
-=======
->>>>>>> 0d82e5aeffe3f2c4405842699973919c193f54fd
 
 
 function App() {
-  const login = true;
+  const login=false;
 
   function MainLayout() {
     return (
-<<<<<<< HEAD
       <div className="bg-[#F6F6F6] min-h-screen  ">
-=======
-      <div className="bg-[#F6F6F6] min-h-screen ">
->>>>>>> 0d82e5aeffe3f2c4405842699973919c193f54fd
         <NavBar />
         <Outlet />
       </div>
@@ -40,9 +32,10 @@ function App() {
     <MentorSlotProvider>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={login ? <HomePage /> : <Welcome />} />
-          <Route path="/auth/signup" element={<Signup />} />
-          <Route path="/auth/login" element={<Login />} />
+          <Route path="/" element={<Welcome />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/auth/signup" element={<Signup />}/>
+          <Route path="/auth/login" element={<Login />}  />
           <Route path="/profile/:username" element={<ProfilePage />} />
           <Route path="/mentor" element={<MentorPage />} />
           <Route path="/mentor/collection" element={<MentorCollection />} />
@@ -53,13 +46,7 @@ function App() {
           <Route path="/booking" element={<MentorBooking />} />
           <Route path="/lobby" element={<Lobby />} />
           <Route path="/room/:roomId" element={<Room />} />
-<<<<<<< HEAD
           <Route path="/session" element={<SessionStatsProgress />} />
-          <Route path="/chat" element={<ChatRoom />} />
-=======
-          <Route path="/sessionStats" element={<SessionStatsProgress />} />
-          {/* <Route path="/previous" element={<PreviousSessions/>} /> */}
->>>>>>> 0d82e5aeffe3f2c4405842699973919c193f54fd
         </Route>
       </Routes>
     </MentorSlotProvider>

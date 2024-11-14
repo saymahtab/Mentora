@@ -182,7 +182,7 @@ const MentorBooking = ({ mentorid }) => {
                         </svg>
                       )}
                       <span
-                        className={`text-sm ${slot.isBooked ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500 cursor-pointer'}`}
+                        className={`text-sm ${slot.isBooked ? 'text-white cursor-not-allowed' : 'text-white cursor-pointer'}`}
                         onClick={() => {
                           if (!slot.isBooked) {
                             navigate(`/session`, {

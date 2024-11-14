@@ -1,5 +1,5 @@
 // Ensure Notification model is imported
-const Notification = require("../models/notification.model");
+const {Notification} = require("../models/notification.model");
 const User = require("../models/User/user.model");
 
 const bcrypt = require('bcryptjs');
@@ -21,44 +21,41 @@ const getUserProfile = async (req, res) => {
 
 const followUnfollowUser = async (req, res) => {
     try {
-        const { id } = req.params;
-        const userToModify = await User.findById(id);
+        const { id } = req.params; // ID of the user to follow/unfollow
+        const userToFollow = await User.findById(id);
         const currentUser = await User.findById(req.user._id);
 
-        if (id === req.user._id.toString()) {
-            return res.status(400).json({ error: "You can't Follow/Unfollow yourself" });
-        }
-
-        if (!userToModify || !currentUser) {
+        if (!userToFollow || !currentUser) {
             return res.status(404).json({ error: "User not found" });
         }
 
+        if (id === req.user._id.toString()) {
+            return res.status(400).json({ error: "You can't follow/unfollow yourself" });
+        }
+
+        // Initialize following/followers arrays if not already present
         currentUser.following = currentUser.following || [];
+        userToFollow.followers = userToFollow.followers || [];
+
         const isFollowing = currentUser.following.includes(id);
 
         if (isFollowing) {
+            // Unfollow
             await User.findByIdAndUpdate(id, { $pull: { followers: req.user._id } });
             await User.findByIdAndUpdate(req.user._id, { $pull: { following: id } });
-            res.status(200).json({ message: "User Unfollowed Successfully" });
+            res.status(200).json({ message: "User unfollowed successfully" });
         } else {
+            // Follow
             await User.findByIdAndUpdate(id, { $push: { followers: req.user._id } });
             await User.findByIdAndUpdate(req.user._id, { $push: { following: id } });
-
-            // Save follow notification
-            const newNotification = new Notification({
-                from: req.user._id,
-                to: id,
-                type: 'follow',
-            });
-            await newNotification.save();
-
-            res.status(200).json({ message: "User Followed Successfully" });
+            res.status(200).json({ message: "User followed successfully" });
         }
     } catch (error) {
         console.error("Error in followUnfollowUser controller:", error.message);
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
 
 const getSuggestedUsers = async (req, res) => {
     try {

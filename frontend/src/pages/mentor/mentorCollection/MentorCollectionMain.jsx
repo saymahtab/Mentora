@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import { MdOutlineWorkOutline } from 'react-icons/md';
 import { IoSchoolSharp } from "react-icons/io5";
-import MentorBooking from "../../../components/booking/mentorBooking";
+// import MentorBooking from "../../../components/booking/mentorBooking";
 
 const MentorCollectionMain = () => {
   const Mentor = mentors[0];

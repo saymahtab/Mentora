@@ -2,7 +2,19 @@
 import React from "react";
 
 const OtherCategoriesFilter = ({ searchTerm, checkedItems, setCheckedItems }) => {
-  const items = ["Business And Management", "Engineering, Technology & Data", "General", "Product & Design"]; // Items data inside component
+  const items = [
+    "Business And Management",
+    "Engineering, Technology & Data",
+    "General",
+    "Product & Design",
+    "Marketing & Sales",
+    "Finance & Accounting",
+    "Human Resources",
+    "Healthcare & Life Sciences",
+    "Education & Training",
+    "Legal"
+  ];
+   // Items data inside component
   const filteredItems = items.filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (

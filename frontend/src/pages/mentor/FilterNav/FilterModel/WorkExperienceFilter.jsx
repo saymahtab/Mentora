@@ -8,9 +8,14 @@ const WorkExperienceFilter = ({ checkedItems, setCheckedItems }) => {
     "Senior Level",
     "Manager",
     "Director",
-    "Executive"
+    "Executive",
+    "Intern",
+    "Lead",
+    "Principal",
+    "VP",
+    "C-Level"
   ];
-
+  
   return (
     <div className="grid grid-cols-2 gap-4">
       {experienceLevels.map((level, index) => (

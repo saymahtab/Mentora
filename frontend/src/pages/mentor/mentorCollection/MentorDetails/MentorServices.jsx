@@ -37,11 +37,7 @@ const MentorServices = ({mentor}) => {
               <button 
                 className="border-2 border-zinc-700 px-4 py-1 rounded-full text-zinc-700 transition-all duration-300 hover:shadow-[inset_0_0_0_1px_black]"
                 onClick={() => navigate('/booking')}
-<<<<<<< HEAD
               >
-=======
-               >
->>>>>>> 0d82e5aeffe3f2c4405842699973919c193f54fd
                 Book Now
                </button>
             </div>

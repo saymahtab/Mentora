@@ -34,7 +34,7 @@ const Login = () => {
 
       if (response.ok) {
         console.log('Login successful');
-        navigate('/mentor')
+        navigate('/home')
         // Redirect or additional logic here
       } else {
         const data = await response.json();
@@ -42,6 +42,7 @@ const Login = () => {
       }
     } catch (error) {
       setError('An error occurred. Please try again.');
+      navigate('/auth/login')
     }
   };
 

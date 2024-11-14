@@ -16,14 +16,14 @@ const userSchema = new mongoose.Schema({
   profileImg: String,
   coverImg: String,
   mobile: { type: String },
-  firstName: { type: String, required: true  },
-  lastName: { type: String, required: true  },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   pronouns: { type: String, enum: ['He/Him/His', 'She/Her', 'They/Them', 'Do not want to show'] },
-  gender: { type: String, enum: ['Male', 'Female', 'Other']  },
+  gender: { type: String, enum: ['Male', 'Female', 'Other'] },
   customGender: String,
-  type: { type: String, enum: ['College Student', 'School Student', 'Professional', 'Fresher', 'Recruiter', 'Organizer', 'Other']  },
+  type: { type: String, enum: ['College Student', 'School Student', 'Professional', 'Fresher', 'Recruiter', 'Organizer', 'Other'] },
   collegeStudent: {
-    course: String, 
+    course: String,
     CourseSpecialization: String,
     courseDuration: { startYear: String, endYear: String },
   },
@@ -62,8 +62,20 @@ const userSchema = new mongoose.Schema({
   hobbies: [String],
   socialLinks: socialLinksSchema,
   connections: { type: Number, default: 0 },
-  following: { type: Number, default: 0 },
-  followers: { type: Number, default: 0 },
+  followers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      default: [],
+    },
+  ],
+  following: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      default: [],
+    },
+  ],
   searchAppearance: { type: Number, default: 0 },
   savedItems: [savedItemSchema],
 }, { timestamps: true });

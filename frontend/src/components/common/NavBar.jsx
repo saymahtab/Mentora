@@ -3,20 +3,25 @@ import { Link } from 'react-router-dom';
 import { IoSearch } from 'react-icons/io5';
 import { BiMessageSquareDetail, BiHomeAlt, BiBriefcaseAlt, BiUser } from 'react-icons/bi';
 import { MdOutlineNotifications, MdWorkOutline } from 'react-icons/md';
+import { FiLogOut } from 'react-icons/fi';
 
 const NavBar = () => {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+
+  const [isPopup, setIsPopup] = useState(false);
+  const openAbout = () => setIsPopup(true);
+  const closeAbout = () => setIsPopup(false);
 
   const focused = false;
 
   return (
     <>
       {/* Top NavBar */}
-      <div className={`flex justify-between navsm:justify-center items-center px-4 py-2 border-b font-poppins w-full ${focused? "navsm:gap-[1rem]": "navsm:gap-[9rem]"} bg-white fixed top-0 z-10`}>
-        <div className="flex items-center gap-4"> 
+      <div className={`flex justify-between navsm:justify-center items-center px-4 py-2 border-b font-poppins w-full ${focused ? "navsm:gap-[1rem]" : "navsm:gap-[9rem]"} bg-white fixed top-0 z-10`}>
+        <div className="flex items-center gap-4">
           {/* Logo */}
           <div className="logo">
-            <Link to="/">
+            <Link to="/home">
               <p className="font-bold xs:text-[1.3rem] text-[#172E59] text-lg">Mentora</p>
             </Link>
           </div>
@@ -24,8 +29,8 @@ const NavBar = () => {
           {/* Search Bar - Hidden on small screens */}
           <div className="flex items-center relative">
             <IoSearch className="absolute left-3 text-[#8e949e] hidden navLarge:flex" />
-            <input 
-              type="search" 
+            <input
+              type="search"
               className="border border-[#dcdcdd] px-10 py-1 rounded-md outline-none transition-all focus:border-blue-700 w-[300px] hidden navLarge:block"
               placeholder="Search"
             />
@@ -50,7 +55,7 @@ const NavBar = () => {
                 <IoSearch className="absolute left-3 text-[#8e949e]" />
                 <input
                   type="search"
-                  className={`border-7 px-10 py-1 rounded-md outline-none focus:w-[20rem] ${w=='20y'} transition-all focus:border-blue-700  w-[150px] md:hidden`}
+                  className={`border-7 px-10 py-1 rounded-md outline-none focus:w-[20rem] ${w == '20y'} transition-all focus:border-blue-700  w-[150px] md:hidden`}
                   placeholder="Search"
                 />
               </div>
@@ -70,9 +75,27 @@ const NavBar = () => {
             <Link>
               <MdOutlineNotifications className="text-[#575656] text-2xl" />
             </Link>
-            <Link className="flex w-6 sm:w-7">
+            <Link onClick={openAbout} className="flex w-6 sm:w-7">
               <img src="/user.png" alt="avatar" className="rounded-full w-full" />
             </Link>
+            {isPopup && (
+              <div className="absolute right-4 mt-36 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                <ul className="py-1">
+                  <Link to="/profile/saymahtab"
+                    className="px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    onClick={closeAbout}
+                  >
+                    Profile
+                  </Link>
+                  <Link to={'auth/login'}
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    onClick={closeAbout}
+                  >
+                   <FiLogOut className="mr-2" /> Log Out
+                  </Link>
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>

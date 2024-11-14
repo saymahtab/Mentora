@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { MdOutlineEdit } from "react-icons/md";
 import ProfilePageSidebar from "./ProfilePageSidebar";
 import ProfilePageMain from "./ProfilePageMain";

@@ -2,7 +2,24 @@
 import React from "react";
 
 const SkillsFilter = ({ searchTerm, checkedItems, setCheckedItems }) => {
-  const skills = ["JavaScript", "React", "Node.js", "Python"]; // Skills data inside component
+  const skills = [
+    "JavaScript", 
+    "React", 
+    "Node.js", 
+    "Python", 
+    "MongoDB", 
+    "HTML", 
+    "CSS", 
+    "Git", 
+    "SQL", 
+    "TypeScript", 
+    "Express.js", 
+    "Docker", 
+    "AWS", 
+    "GraphQL", 
+    "Tailwind CSS"
+  ];
+  
   const filteredSkills = skills.filter((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
