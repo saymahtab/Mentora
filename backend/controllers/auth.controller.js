@@ -65,8 +65,13 @@ const signup = async (req, res) => {
             userName,
             firstName,
             lastName,
+<<<<<<< HEAD
             profileImg: "",
             coverImg: "",
+=======
+            profileImg: "",  
+            coverImg: "",  
+>>>>>>> 0d82e5aeffe3f2c4405842699973919c193f54fd
         });
 
         await newUser.save();
