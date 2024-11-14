@@ -2,13 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const MentorServices = ({mentor}) => {
-<<<<<<< HEAD
 
   const navigate = useNavigate();
 
-=======
-  const navigate=useNavigate();
->>>>>>> 5a51a34ff540e135dad07c2f71982b0acd5fee37
   return (
     <div className="bg-white rounded-lg border shadow-sm mt-2 pb-4">
       <h2 className="text-xl font-semibold ml-6 mt-3 text-zinc-700">
@@ -38,14 +34,9 @@ const MentorServices = ({mentor}) => {
                   </p>
                 </div>
               </div>
-<<<<<<< HEAD
               <button 
                 className="border-2 border-zinc-700 px-4 py-1 rounded-full text-zinc-700 transition-all duration-300 hover:shadow-[inset_0_0_0_1px_black]"
                 onClick={() => navigate('/booking')}
-=======
-              <button className="border-2 border-zinc-700 px-4 py-1 rounded-full text-zinc-700 transition-all duration-300 hover:shadow-[inset_0_0_0_1px_black]"
-              onClick={()=>navigate('/booking')}
->>>>>>> 5a51a34ff540e135dad07c2f71982b0acd5fee37
               >
                 Book Now
               </button>

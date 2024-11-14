@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Lobby() {
     const [roomCode, setRoomCode] = useState('');
     const [userName, setUserName] = useState('');
     const navigate = useNavigate();
-
-    const generateId=()=>{
-        return Math.floor(100000 + Math.random()*900000);
-    }
-    console.log(generateId());
-
+    const location = useLocation();
+    const { meet } = location.state || {};
+    console.log("Meeting Id" ,meet);
     const handleJoinRoom = () => {
         if (roomCode && userName) {
             navigate(`/room/${roomCode}`, { state: { userName } });
@@ -40,7 +37,7 @@ export default function Lobby() {
                     <label className="block text-sm font-medium text-gray-300">Room Code</label>
                     <input
                         type="text"
-                        value={roomCode}
+                        value={meet}
                         onChange={(e) => setRoomCode(e.target.value)}
                         placeholder="Enter room code"
                         className="w-full mt-2 p-3 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"

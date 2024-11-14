@@ -90,6 +90,9 @@ const CountdownTimer = ({ endDate, endTime, disappearDuration = 1440, disableDur
     return () => clearInterval(disappearCountdown);
   }, [disappearDuration]);
 
+  let meetId=generateId();
+  console.log(meetId)
+
   return (
     <div
       className={`flex flex-col items-center bg-gray-50 p-4 mx-2 rounded-lg mt-2 ${isRemain ? 'hidden' : ''
@@ -110,11 +113,17 @@ const CountdownTimer = ({ endDate, endTime, disappearDuration = 1440, disableDur
         <div className="text-center">
           <h4 className="text-lg font-semibold text-red-700">Join Meeting</h4>
           <div className="mt-4">
-            <span className="text-xl font-semibold text-blue-700">Meeting ID: {generateId()}</span>
+            <span className="text-xl font-semibold text-blue-700">Meeting ID: {meetId}</span>
           </div>
 
           <button
-            onClick={() => navigate("/lobby")}
+            onClick={() =>
+              navigate("/lobby", {
+                state: {
+                  meet:meetId,
+                }
+              })
+            }
             className={`mt-4 px-6 py-2 ${isDisable ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-700 hover:bg-blue-600'
               } text-white rounded-lg focus:outline-none`}
             disabled={isDisable}

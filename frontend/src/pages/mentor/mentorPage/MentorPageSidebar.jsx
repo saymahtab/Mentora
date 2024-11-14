@@ -28,7 +28,7 @@ const MentorPageSidebar = () => {
                 </Link>
             </div>
             <div className='hover:bg-[#f5f5f5] py-4'>
-                <Link to='/sessionStats' className='flex items-center gap-2 text-[#404040] pl-3'>
+                <Link to='/session' className='flex items-center gap-2 text-[#404040] pl-3'>
                     <FaCalendarAlt className='size-5'/>
                     <p className='font-medium'>My Sessions</p>
                 </Link>

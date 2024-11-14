@@ -54,7 +54,7 @@ const MentorBooking = ({ mentorid }) => {
   }
   
   return (
-    <div className="flex flex-col lg:flex-row max-w-6xl mx-auto p-6 -z bg-white shadow-lg rounded-lg space-y-6 lg:space-y-0 lg:space-x-6 mt-10">
+    <div className="flex flex-col lg:flex-row max-w-6xl mx-auto px-6 py-6   -z bg-white shadow-lg rounded-lg lg:space-y-0 lg:space-x-6 mt-10">
       {/* Mentor Profile Section */}
       <div className="lg:w-2/3 hover:bg-gray-50 transition-all rounded-t-2xl">
         <div className="bg-purple-100   rounded-t-2xl ">
@@ -185,7 +185,7 @@ const MentorBooking = ({ mentorid }) => {
                         className={`text-sm ${slot.isBooked ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500 cursor-pointer'}`}
                         onClick={() => {
                           if (!slot.isBooked) {
-                            navigate(`/sessionStats`, {
+                            navigate(`/session`, {
                               state: {
                                 endDate: slot.date,
                                 endTime: slot.time,

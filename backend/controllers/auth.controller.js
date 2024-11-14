@@ -2,14 +2,14 @@ const disposableDomains = require('disposable-email-domains');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const { generateTokenAndSetCookie } = require("../lib/utils/generateTokenAndSetCookie");
-const User = require('../models/User/user.model'); 
+const User = require('../models/User/user.model');
 
 const signup = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, firstName, lastName } = req.body;
 
         // Check if all required fields are provided
-        if (!email || !password) {
+        if (!email || !password || !firstName || !lastName) {
             return res.status(400).json({ error: "All fields are required" });
         }
 
@@ -24,6 +24,7 @@ const signup = async (req, res) => {
             return res.status(400).json({ error: "Temporary email addresses are not allowed" });
         }
 
+        // Validate password strength
         // Validate password strength
         const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
         if (!strongPasswordRegex.test(password)) {
@@ -62,8 +63,10 @@ const signup = async (req, res) => {
             email: validator.normalizeEmail(email),
             password: hashedPassword,
             userName,
-            profileImg: "",  
-            coverImg: "",  
+            firstName,
+            lastName,
+            profileImg: "",
+            coverImg: "",
         });
 
         await newUser.save();
@@ -72,6 +75,8 @@ const signup = async (req, res) => {
         return res.status(201).json({
             _id: newUser._id,
             userName: newUser.userName,
+            firstName: newUser.firstName,
+            lastName: newUser.lastName,
             email: newUser.email,
         });
     } catch (error) {
@@ -79,6 +84,7 @@ const signup = async (req, res) => {
         return res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
 
 
 

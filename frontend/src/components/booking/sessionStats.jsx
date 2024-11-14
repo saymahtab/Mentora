@@ -9,13 +9,11 @@ const SessionStatsProgress = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  //storing previous meetings;
   const [meeting, setMeetings] = useState([]);
 
   // Retrieve endDate and endTime from the location state
   const { endDate, endTime } = location.state || {};
   const { slots } = location.state || [];
-  console.log("slot", slots);
   useEffect(() => {
     const isSlotPresent = meeting.some((meet) => meet.date === slots.date && meet.time === slots.time);
 
