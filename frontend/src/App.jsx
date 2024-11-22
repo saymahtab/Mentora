@@ -6,7 +6,7 @@ import Signup from "./pages/auth/signup/Signup";
 import HomePage from "./pages/home/HomePage";
 import NavBar from "./components/common/NavBar";
 import ProfilePage from "./pages/profile/ProfilePage";
-import MentorPage from "./pages/mentor/MentorPage/MentorPage";
+import MentorPage from "./pages/mentor/mentorPage/MentorPage";
 import MentorCollection from "./pages/mentor/mentorCollection/MentorCollection";
 import { MentorSlotProvider } from "./components/context/mentorBookingContext";
 import MentorBooking from "./components/booking/mentorBooking";
@@ -21,33 +21,23 @@ function App() {
 
   function MainLayout() {
     return (
-<<<<<<< HEAD
-      <div className="bg-[#F6F6F6] min-h-screen  ">
-=======
       <div className="bg-[#F6F6F6] min-h-screen ">
->>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
         <NavBar />
         <Outlet />
       </div>
     );
   }
-
   return (
     <MentorSlotProvider>
       <Routes>
-        <Route path="/auth/signup" element={<Signup />} />
-        <Route path="/auth/login" element={<Login />} />
-      </Routes>
-      <Routes>
+      <Route path="/auth/signup" element={<Signup />} />
+      <Route path="/auth/login" element={<Login />} />
         <Route element={<MainLayout />}>
-<<<<<<< HEAD
           <Route path="/" element={<Welcome />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/auth/signup" element={<Signup />}/>
           <Route path="/auth/login" element={<Login />}  />
-=======
           <Route path="/" element={login ? <HomePage /> : <Welcome />} />
->>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
           <Route path="/profile/:username" element={<ProfilePage />} />
           <Route path="/mentor" element={<MentorPage />} />
           <Route path="/mentor/collection" element={<MentorCollection />} />
@@ -59,10 +49,6 @@ function App() {
           <Route path="/lobby" element={<Lobby />} />
           <Route path="/room/:roomId" element={<Room />} />
           <Route path="/session" element={<SessionStatsProgress />} />
-<<<<<<< HEAD
-=======
-          {/* <Route path="/previous" element={<PreviousSessions/>} /> */}
->>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
         </Route>
       </Routes>
     </MentorSlotProvider>

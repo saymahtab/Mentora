@@ -26,7 +26,7 @@ export default function Lobby() {
                     <label className="block text-sm font-medium text-gray-300">Your Name</label>
                     <input
                         type="text"
-                        value={userName}
+                        // value={userName}
                         onChange={(e) => setUserName(e.target.value)}
                         placeholder="Enter your name"
                         className="w-full mt-2 p-3 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -37,7 +37,7 @@ export default function Lobby() {
                     <label className="block text-sm font-medium text-gray-300">Room Code</label>
                     <input
                         type="text"
-                        value={meet}
+                        // value={123456}
                         onChange={(e) => setRoomCode(e.target.value)}
                         placeholder="Enter room code"
                         className="w-full mt-2 p-3 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"

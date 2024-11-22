@@ -48,7 +48,7 @@ const Reviews = ({ mentor }) => {
   };
 
   return (
-    <section className="flex items-start flex-col px-6 py-5 bg-white rounded-lg border mt-2 text-zinc-700 w-full relative pb-10">
+    <section className="flex items-start flex-col px-6 py-5 bg-white rounded-lg border mt-2 text-zinc-700 w-full relative pb-10 ">
       <h2 className="text-xl font-semibold mb-4">Reviews</h2>
       <div className="flex items-start justify-between w-full">
         <div className="flex flex-col items-center border rounded-3xl py-4 px-12">

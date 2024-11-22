@@ -1,6 +1,6 @@
 // controllers/post.controller.js
 const { Post } = require("../models/post.model");
-const { User } = require("../models/User/user.model");
+const { User } = require("../models/user.model");
 const { Notification } = require("../models/notification.model");
 const { v2: cloudinary } = require('cloudinary');
 

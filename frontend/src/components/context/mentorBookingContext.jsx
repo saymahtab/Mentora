@@ -20,20 +20,20 @@ export const MentorSlotProvider = ({ children }) => {
         { id: 11, date: "2024-11-15", time: "10:00 AM", isBooked: false, bookedBy: null },
         { id: 12, date: "2024-11-14", time: "11:00 AM", isBooked: false, bookedBy: null },
         { id: 13, date: "2024-11-15", time: "12:00 PM", isBooked: false, bookedBy: null },
-        { id: 14, date: "2024-11-15", time: "01:00 PM", isBooked: false, bookedBy: null },
-        { id: 15, date: "2024-11-14", time: "02:00 PM", isBooked: false, bookedBy: null },
+        { id: 14, date: "2024-11-15", time: "02:00 PM", isBooked: false, bookedBy: null },
+        { id: 15, date: "2024-11-14", time: "02:21 PM", isBooked: false, bookedBy: null },
         { id: 16, date: "2024-11-13", time: "04:04 PM", isBooked: false, bookedBy: null },
         { id: 17, date: "2024-11-16", time: "10:00 AM", isBooked: false, bookedBy: null },
         { id: 18, date: "2024-11-16", time: "11:00 AM", isBooked: false, bookedBy: null },
         { id: 19, date: "2024-11-16", time: "01:00 PM", isBooked: false, bookedBy: null },
 
-        { id: 20, date: "2024-11-17", time: "09:00 AM", isBooked: false, bookedBy: null },
-        { id: 21, date: "2024-11-17", time: "10:00 AM", isBooked: false, bookedBy: null },
-        { id: 22, date: "2024-11-17", time: "11:00 AM", isBooked: false, bookedBy: null },
+        { id: 20, date: "2024-11-24", time: "09:00 AM", isBooked: false, bookedBy: null },
+        { id: 21, date: "2024-11-25", time: "10:00 AM", isBooked: false, bookedBy: null },
+        { id: 22, date: "2024-11-23", time: "11:00 AM", isBooked: false, bookedBy: null },
 
-        { id: 23, date: "2024-11-18", time: "08:00 AM", isBooked: false, bookedBy: null },
-        { id: 24, date: "2024-11-18", time: "09:00 AM", isBooked: false, bookedBy: null },
-        { id: 25, date: "2024-11-18", time: "10:00 AM", isBooked: false, bookedBy: null }
+        { id: 23, date: "2024-11-23", time: "08:00 AM", isBooked: false, bookedBy: null },
+        { id: 24, date: "2024-11-22", time: "09:00 AM", isBooked: false, bookedBy: null },
+        { id: 25, date: "2024-11-22", time: "10:00 PM", isBooked: false, bookedBy: null }
 
     ]);
 

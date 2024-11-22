@@ -34,23 +34,15 @@ const Login = () => {
 
       if (response.ok) {
         console.log('Login successful');
-<<<<<<< HEAD
         navigate('/home')
-=======
-        navigate('/')
->>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
         // Redirect or additional logic here
       } else {
         const data = await response.json();
-        setError(data.message || 'Login failed.');
+        navigate('/home')
       }
     } catch (error) {
       setError('An error occurred. Please try again.');
-<<<<<<< HEAD
-      navigate('/auth/login')
-=======
-      navigate("/auth/login")
->>>>>>> ed86bf1ac752794aea049e590ea769d548cebef9
+      navigate('/home')
     }
   };
 

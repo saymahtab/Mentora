@@ -17,7 +17,7 @@ const MentorDetails = ({ mentor, onClose }) => {
   };
 
   return (
-    <div className='flex flex-col ml-[26.4rem]'>
+    <div className='flex flex-col  ml-[26.4rem]  '>
         <MentorProfileCard isLiked={isLiked} toggleLike = {toggleLike} mentor={mentor}/>
         <MentorServices mentor={mentor}/>
         <MentorAbout mentor={mentor}/>

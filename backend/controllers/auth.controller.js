@@ -2,7 +2,7 @@ const disposableDomains = require('disposable-email-domains');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const { generateTokenAndSetCookie } = require("../lib/utils/generateTokenAndSetCookie");
-const User = require('../models/User/user.model');
+const User = require('../models/User/user.model'); 
 
 const signup = async (req, res) => {
     try {
@@ -25,8 +25,7 @@ const signup = async (req, res) => {
         }
 
         // Validate password strength
-        // Validate password strength
-        const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+        const strongPasswordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[\W_]).{6,}$/;
         if (!strongPasswordRegex.test(password)) {
             return res.status(400).json({
                 error: "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character",
@@ -65,8 +64,6 @@ const signup = async (req, res) => {
             userName,
             firstName,
             lastName,
-            profileImg: "",
-            coverImg: "",
             profileImg: "",  
             coverImg: "",  
         });
